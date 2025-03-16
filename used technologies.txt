@@ -1,0 +1,31 @@
+//Overall
+nodemon
+multer 
+mongoose
+jsonwebtoken
+express-formidable
+express-async-handler
+express
+dotenv
+cors //not used
+cookie-parser
+concurrently
+bcryptjs
+
+//frontend
+react
+vite
+tailwindcss @tailwindcss/vite
+slick-carousel
+react-slick
+react-toastify
+react-router
+react-router-dom
+react-redux
+react-icons
+apexcharts
+moment
+flowbite
+axios //not used
+@reduxjs/toolkit
+@paypal/react-paypal-js

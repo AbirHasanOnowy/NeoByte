@@ -1,0 +1,50 @@
+// Initials <frontend mostly>
+1. create project folder 
+2. create frontend using vite@latest inside project folder
+3. install necessary files including tailwindcss and config everything as 
+   their website guideline
+4. remove unnecessary files of vite like public folder, 
+   from src folder delete asset app.css index.css unnecessary imports,
+5. go outside frontend (project folder)
+6. install necessary packages for backend and whole project
+7. modify script
+
+//backend setup
+1. create major folders config,controllers,models,middleware,routes,utils
+2. create main file index.js or server.js
+3. try running backend from using script
+4. create db.js inside config folder
+5. inside db code all necessary codes for connecting server using mongoose
+6. create .env outside to save gloval variables for port and database uri
+7. then from index.js (backend) import path, express, cookieparser, dotenv
+8. listen to port
+9. create basic home route
+
+
+
+#       B   A   C   K   E   N   D      #
+
+//User API [ route, model, controller, middleware, jwt ]
+1. create basic user api in index.js and create associated route,controller,
+   model for the user 
+2. define user schema in userModel.js file, create instance of the model and export it
+3. create asyncHandler.js in middleware folder that handles errors 
+4. from userRoute use createUser call back and define it in userController.js file
+5. validate user data and take action
+6. encrypt user password using bcrypt(salt) and hashing in userController.js file
+7. create a file in utils folder to generate jwt and export it
+8. then generate token using user id and send cookie to user
+9. Similarly implement login by varifying email & pass and setting new cookie
+10. Also logout user by clearing cookie
+11. create authentication middleware in middleware folder
+12. create route for authentication of admin and return all users
+13. create route for user profile and add features like updaing profile
+14. Add feature(route) to get, update, delete from admin side 
+
+
+#     F   R   O   N   T   E   N   D      #
+
+//Basic folders and pages
+1. inside src create components,pages,redux folder
+2. inside pages folder create Admin, Auth, User folder
+3. inside Auth folder create Navigation.jsx and Navigation.css file
