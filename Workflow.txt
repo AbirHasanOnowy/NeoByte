@@ -48,3 +48,13 @@
 1. inside src create components,pages,redux folder
 2. inside pages folder create Admin, Auth, User folder
 3. inside Auth folder create Navigation.jsx and Navigation.css file
+4. modify app.jsx and main.jsx as necessary
+5. add links to navigation pannel
+6. redux -> api -> apiSlice.js, userApiSlice.js
+7. redux -> features -> constants.js, store.js
+8. creates apis in apiSlice.js
+9. add endpoints at userApiSlice.js
+10. add url constants in features->constants.js
+11. in store.js define reducer and middleware
+12. redux -> auth -> authSlice.js for authentication
+13. now implement login, logout in navigation.jsx file
