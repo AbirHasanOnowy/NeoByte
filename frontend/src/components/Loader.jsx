@@ -4,8 +4,8 @@ const Loader = () => {
     return (
         <div className="animate-spin
          rounded-full
-         h-16
-         w-16
+         h-8
+         w-8
          border-t-4
          border-pink-500
          border-opacity-50">

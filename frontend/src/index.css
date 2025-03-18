@@ -6,7 +6,7 @@ body {
     color: #fff;
   }
   
-  input,
-  textarea {
+input, textarea {
+    background: #676767;
     color: #000;
   }

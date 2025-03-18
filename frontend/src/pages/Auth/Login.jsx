@@ -63,7 +63,7 @@ const Login = () => {
                 value={password}
                 onChange={e => setPassword(e.target.value)} />
             </div>
-            <button disabled={isLoading} type="submit" className="mt-4 bg-pink-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem] hover:bg-pink-600">
+            <button disabled={isLoading} type="submit" className="mt-4 transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 active:from-pink-500 active:to-yellow-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem] hover:bg-pink-600">
               {isLoading ? "Signing In..." : "Sign In"}
             </button>
             {isLoading && <Loader />}
@@ -74,7 +74,7 @@ const Login = () => {
               New Customer ? {" "}
               <Link
                 to={redirect ? `/register?redirect=${redirect}` : "/register"}
-                className="text-pink-500 hover:underline"
+                className="transition-colors duration-600 text-blue-700 hover:underline hover:text-purple-700"
               >
                 Register
               </Link>
