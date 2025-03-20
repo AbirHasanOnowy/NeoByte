@@ -1,3 +1,5 @@
+@#$ - - - - -         S        E        T        U        P        - - - - - - - $#@
+
 // Initials <frontend mostly>
 1. create project folder 
 2. create frontend using vite@latest inside project folder
@@ -22,9 +24,13 @@
 
 
 
+
+@#$ - - - - -         U        S        E        R          - - - - - - - $#@
+
+
 #       B   A   C   K   E   N   D      #
 
-//User API [ route, model, controller, middleware, jwt ]
+//[ route, model, controller, middleware, jwt ]
 1. create basic user api in index.js and create associated route,controller,
    model for the user 
 2. define user schema in userModel.js file, create instance of the model and export it
@@ -58,3 +64,20 @@
 11. in store.js define reducer and middleware
 12. redux -> auth -> authSlice.js for authentication
 13. now implement login, logout in navigation.jsx file
+14. add options for users after login
+15. Users->Profile.jsx implement user profile section by 
+    adding get data and update data feature in users
+16. Admin->AdminRoute.jsx, UserList.jsx, implement get all user 
+    info, update users, delete user feature
+
+
+
+@#$ - - - - -         C        A        T        E        G        O        R        Y        - - - - -$#@
+
+
+#       B   A   C   K   E   N   D      #
+1. in index.js use category route for category path
+2. Route->categoryRoute.js define category route
+3. model->categoryModel.js define category schema and export
+4. controllers->categoryController.js define all controllers
+   ( get all, specific, add, update, delete) for routes

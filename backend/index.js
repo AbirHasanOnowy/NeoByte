@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 
 //routes
 import userRoute from "./routes/userRoute.js";
+import categoryRoute from "./routes/categoryRoute.js";
 
 //utils
 import connectDB from "./config/db.js";
@@ -21,7 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+//Routes
 app.use("/api/user", userRoute);
+app.use("/api/category", categoryRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello from the backend!");
