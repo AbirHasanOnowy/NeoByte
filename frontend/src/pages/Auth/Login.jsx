@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useLoginMutation } from "../../redux/api/userApiSlice";
-import { setCredientials } from "../../redux/features/auth/authSlice";
+import { setCredentials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
 
@@ -38,7 +38,7 @@ const Login = () => {
     try {
       const res = await login({ email, password }).unwrap();
       console.log(res);
-      dispatch(setCredientials({ ...res }));
+      dispatch(setCredentials({ ...res }));
     } catch (error) {
       toast.error(error.data?.message || error.message);
     }
@@ -80,7 +80,14 @@ const Login = () => {
               </Link>
             </p>
           </div>
+
+
         </div>
+        <img
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+          alt=""
+          className="h-[65rem] w-[55%] xl:block md:hidden sm:hidden rounded-lg"
+        />
       </section >
     </div >
   );
