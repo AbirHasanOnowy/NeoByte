@@ -96,12 +96,15 @@ const Profile = () => {
                         </div>
 
                         <div className="flex justify-between">
-                            <button
-                                type="submit"
-                                className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 active:from-pink-500 active:to-yellow-500 text-white py-2 px-4 rounded"
-                            >
-                                Update
-                            </button>
+                            <div>
+                                <button
+                                    type="submit"
+                                    className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 active:from-pink-500 active:to-yellow-500 text-white py-2 px-4 rounded"
+                                >
+                                    Update
+                                </button>
+                                {loadingUpdateProfile && <Loader />}
+                            </div>
 
                             <Link
                                 to="/user-orders"
@@ -110,7 +113,7 @@ const Profile = () => {
                                 My Orders
                             </Link>
                         </div>
-                        {loadingUpdateProfile && <Loader />}
+
                     </form>
                 </div>
             </div>

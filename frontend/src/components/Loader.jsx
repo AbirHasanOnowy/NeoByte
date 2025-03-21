@@ -1,13 +1,15 @@
-import React from 'react'
-
 const Loader = () => {
     return (
         <div className="animate-spin
          rounded-full
-         h-8
-         w-8
+         h-9
+         w-9
          border-t-4
-         border-pink-500
+         border-purple-700
+         ml-4
+         relative
+         top-3
+         inline-block
          border-opacity-50">
         </div>
     )
