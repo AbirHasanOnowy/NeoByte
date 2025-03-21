@@ -81,3 +81,11 @@
 3. model->categoryModel.js define category schema and export
 4. controllers->categoryController.js define all controllers
    ( get all, specific, add, update, delete) for routes
+
+
+#     F   R   O   N   T   E   N   D      #
+1. src->pages->Admin->CategoryList.jsx
+2. import CategoryList to main.jsx to render it
+3. redux->api->categoryApiSlice.js and config all routes here
+4. create category url const in redux->constants.js file
+5. components->CategoryForm.jsx , Modal.jsx to insert/update/delete catagory

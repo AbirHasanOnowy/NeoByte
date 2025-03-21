@@ -13,11 +13,11 @@ import {
 const router = express.Router();
 
 router.route("/").post(authenticateUser, authorizeUserAsAdmin, createCategory);
+router.route("/categories").get(listCategory);
 router
   .route("/:categoryId")
   .get(readCategory)
   .put(authenticateUser, authorizeUserAsAdmin, updateCategory)
   .delete(authenticateUser, authorizeUserAsAdmin, removeCategory);
-router.route("/categories").get(listCategory);
 
 export default router;

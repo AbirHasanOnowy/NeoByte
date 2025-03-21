@@ -120,16 +120,17 @@ const Register = () => {
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
                     </div>
+                    <div>
+                        <button
+                            disabled={isLoading}
+                            type="submit"
+                            className="text-white px-4 py-2 rounded cursor-pointer my-[1rem] transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 active:from-pink-500 active:to-yellow-500"
+                        >
+                            {isLoading ? "Registering..." : "Register"}
+                        </button>
 
-                    <button
-                        disabled={isLoading}
-                        type="submit"
-                        className="text-white px-4 py-2 rounded cursor-pointer my-[1rem] transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 active:from-pink-500 active:to-yellow-500"
-                    >
-                        {isLoading ? "Registering..." : "Register"}
-                    </button>
-
-                    {isLoading && <Loader />}
+                        {isLoading && <Loader />}
+                    </div>
                 </form>
 
                 <div className="mt-4">
