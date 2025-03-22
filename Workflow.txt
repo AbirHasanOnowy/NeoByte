@@ -89,3 +89,16 @@
 3. redux->api->categoryApiSlice.js and config all routes here
 4. create category url const in redux->constants.js file
 5. components->CategoryForm.jsx , Modal.jsx to insert/update/delete catagory
+
+
+
+
+@#$ - - - - -         P        R        O        D        U        C        T        - - - - -$#@
+
+
+#       B   A   C   K   E   N   D      #
+1. similar as before create product model,controller,route and 
+   main route to index file
+2. middleware->checkId.js 
+3. also provide route for image upload and create a uploadRoute for it.
+4. create a uploads folder besides frontend and backend where images will be stored
