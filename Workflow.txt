@@ -102,3 +102,15 @@
 2. middleware->checkId.js 
 3. also provide route for image upload and create a uploadRoute for it.
 4. create a uploads folder besides frontend and backend where images will be stored
+
+
+#     F   R   O   N   T   E   N   D      #
+1. redux->api->productApiSlice.js
+2. add product url to constants
+3. pages->admin->AddProduct.jsx create a form to take all info regarding
+   creating a Product and upload image
+4. import and render it to main.jsx
+5. pages->admin->ProductUpdate.jsx to update existing product info
+6. render it from main.jsx
+7. pages->admin->AdminMenu.jsx provise extra features for Admin 
+8. pages->admin->AllProducts.jsx show all products and render it to main.jsx

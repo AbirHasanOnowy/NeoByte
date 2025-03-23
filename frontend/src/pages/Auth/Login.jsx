@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "../../components/Loader";
 import { useLoginMutation } from "../../redux/api/userApiSlice";
 import { setCredentials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
-import Loader from "../../components/Loader";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,6 +24,7 @@ const Login = () => {
   const redirect = sp.get("redirect") || "/";
 
 
+
   useEffect(() => {
     if (userInfo) {
       navigate(redirect);
@@ -30,38 +33,70 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
-    if (!email || !password) {
-      return toast.error("Please fill in all fields");
-    }
-
     try {
       const res = await login({ email, password }).unwrap();
       console.log(res);
+      if (res.error) {
+        toast.error(res.error);
+        return;
+      }
       dispatch(setCredentials({ ...res }));
-    } catch (error) {
-      toast.error(error.data?.message || error.message);
+      navigate(redirect);
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
     }
-  }
+  };
+
 
   return (
     <div>
       <section className="pl-[10rem] flex flex-wrap">
         <div className="mr-[4rem] mt-[5rem]">
-          <h1 className="taxt-2xl font-semibold mb-4">Sign In</h1>
+          <h1 className="text-2xl font-semibold mb-4">Sign In</h1>
 
           <form onSubmit={submitHandler} className="container w-[40rem]">
             <div className="my-[2rem]">
-              <label htmlFor="email" className="block text-sm font-medium text-white">Email Address</label>
-              <input type="email" id="email" className="mt-1 p-2 bg-[#676666] green border rounded w-full"
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-white"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="mt-1 p-2 border rounded w-full"
+                placeholder="Enter email"
                 value={email}
-                onChange={e => setEmail(e.target.value)} />
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-            <div className="my-[2rem]">
-              <label htmlFor="password" className="block text-sm font-medium text-white">Password</label>
-              <input type="password" id="password" className="mt-1 p-2 bg-[#676666] green border rounded w-full"
+            <div className="mb-4">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-white"
+              >
+                Password
+              </label>
+              <input
+                type={isPasswordVisible ? "text" : "password"}
+                id="password"
+                className="mt-1 p-2 border rounded w-full"
+                placeholder="Enter password"
                 value={password}
-                onChange={e => setPassword(e.target.value)} />
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {isPasswordVisible ? (
+                <FaRegEye
+                  onClick={() => setIsPasswordVisible(false)}
+                  className="relative left-[92%] -top-8 cursor-pointer text-black w-6 h-6 z-10"
+                ></FaRegEye>
+              ) : (
+                <FaRegEyeSlash
+                  onClick={() => setIsPasswordVisible(true)}
+                  className="relative left-[92%] -top-8 cursor-pointer text-black w-6 h-6 z-10"
+                ></FaRegEyeSlash>
+              )}
             </div>
             <div>
               <button disabled={isLoading} type="submit" className="mt-4 inline transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 active:from-pink-500 active:to-yellow-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem] hover:bg-pink-600">

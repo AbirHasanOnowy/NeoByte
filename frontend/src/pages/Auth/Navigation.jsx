@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import {
     AiOutlineHome,
     AiOutlineShopping,
@@ -19,19 +19,20 @@ const Navigation = () => {
 
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [showSidebar, setShowSidebar] = useState(false);
+    // const [showSidebar, setShowSidebar] = useState(false);
+    const showSidebar = false;
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
 
-    const toogleSidebar = () => {
-        setShowSidebar(!showSidebar);
-    };
+    // const toogleSidebar = () => {
+    //     setShowSidebar(!showSidebar);
+    // };
 
-    const closeSidebar = () => {
-        setShowSidebar(false);
-    };
+    // const closeSidebar = () => {
+    //     setShowSidebar(false);
+    // };
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -113,7 +114,7 @@ const Navigation = () => {
 
                 {dropdownOpen && userInfo && (
                     <ul
-                        className={`absolute right-0 mt-2 mr-14 space-y-2 bg-[#171414] text-gray-600 ${!userInfo.isAdmin ? "-top-20" : "-top-80"
+                        className={`absolute p-2 right-0 mt-2 mr-14 space-y-2 bg-[#151515] ${!userInfo.isAdmin ? "-top-30" : "-top-90"
                             } `}
                     >
                         {userInfo.isAdmin && (
@@ -121,15 +122,15 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/dashboard"
-                                        className="block px-4 py-2 hover:bg-[#292424]"
+                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
                                     >
                                         Dashboard
                                     </Link>
                                 </li>
                                 <li>
                                     <Link
-                                        to="/admin/productlist"
-                                        className="block px-4 py-2 hover:bg-[#292424]"
+                                        to="/admin/addproduct"
+                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
                                     >
                                         Products
                                     </Link>
@@ -137,7 +138,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/categorylist"
-                                        className="block px-4 py-2 hover:bg-[#292424]"
+                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
                                     >
                                         Category
                                     </Link>
@@ -145,7 +146,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/orderlist"
-                                        className="block px-4 py-2 hover:bg-[#292424]"
+                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
                                     >
                                         Orders
                                     </Link>
@@ -153,7 +154,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/userlist"
-                                        className="block px-4 py-2 hover:bg-[#292424]"
+                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
                                     >
                                         Users
                                     </Link>
@@ -162,14 +163,14 @@ const Navigation = () => {
                         )}
 
                         <li>
-                            <Link to="/profile" className="block px-4 py-2 hover:bg-[#292424]">
+                            <Link to="/profile" className="block px-4 py-2 hover:bg-[#2E2D2D] ">
                                 Profile
                             </Link>
                         </li>
                         <li>
                             <button
                                 onClick={logoutHandler}
-                                className="block w-full px-4 py-2 text-left hover:bg-[#292424]"
+                                className="block w-full px-4 py-2 text-left hover:bg-[#2E2D2D] "
                             >
                                 Logout
                             </button>

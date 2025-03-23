@@ -77,8 +77,10 @@ const updateProduct = asyncHandler(async (req, res) => {
       switch (true) {
         case !fields.name:
           return res.status(400).json({ message: "Name is required" });
+        // throw new Error("Name is required");
         case !fields.image:
           return res.status(400).json({ message: "Image is required" });
+        // throw new Error("Image is required");
         case !fields.description:
           return res.status(400).json({ message: "Description is required" });
         case !fields.price:

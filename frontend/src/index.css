@@ -7,6 +7,7 @@ body {
   }
   
 input, textarea {
-    background: #676767;
-    color: #000;
+    background: #1a1a1b;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
   }
