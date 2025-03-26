@@ -105,6 +105,8 @@
 
 
 #     F   R   O   N   T   E   N   D      #
+
+//Admin 
 1. redux->api->productApiSlice.js
 2. add product url to constants
 3. pages->admin->AddProduct.jsx create a form to take all info regarding
@@ -114,3 +116,21 @@
 6. render it from main.jsx
 7. pages->admin->AdminMenu.jsx provise extra features for Admin 
 8. pages->admin->AllProducts.jsx show all products and render it to main.jsx
+
+//user
+1. components->Header.jsx 
+2. Pages->products to set up all pages related to product
+3. src->pages->Home.jsx
+4. Add home to main.jsx
+5. components->Header.jsx for loading top rated products
+6. products->SmallProduct.jsx is to show top products in Home and also related product in ProductDetails page
+7. products->HeartIcon.jsx to handle favourite selection by user
+8. products->Favourites.jsx to show favoutite products selected by user
+9. redux->features->favourites->favoriteSlice.js to handle favourite selection for client locally
+10. utils->localstorage.jsx to handle favoutite selection and store it locally as JSON also use store.js for it
+11. products->FavouritesCount.jsx to show no of selected favourites in navigation fevorites links
+12. products->ProductCarousel.jsx to show a carousal view of top products in Home page
+13. products->Product.jsx to show all products bellow top products in Home page
+14. products->Ratings.jsx to show ratings with stars where ever it is used
+15. products->ProductDetails.jsx for providing product detail upon clicking a product
+16. products->ProductTabs.jsx to Handle reviews and show related products in ProductDetails page
