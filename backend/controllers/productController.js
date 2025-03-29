@@ -32,6 +32,8 @@ const addProduct = asyncHandler(async (req, res) => {
           return res.status(400).json({ message: "Quantity is required" });
         case !fields.brand:
           return res.status(400).json({ message: "Brand is required" });
+        case !fields.countInStock:
+          return res.status(400).json({ message: "CountInStock is required" });
       }
 
       const name = fields.name[0];
@@ -41,19 +43,18 @@ const addProduct = asyncHandler(async (req, res) => {
       const category = fields.category[0];
       const quantity = parseInt(fields.quantity[0]);
       const brand = fields.brand[0];
+      const countInStock = parseInt(fields.countInStock[0]);
 
       const product = new Product({
         name,
         image,
+        brand,
+        quantity,
+        category,
         description,
         price,
-        category,
-        quantity,
-        brand,
+        countInStock,
       });
-
-      // product.image.data = fs.readFileSync(files.image.path);
-      // product.image.contentType = files.image.type;
 
       await product.save();
       res.status(201).json(product);
@@ -91,6 +92,8 @@ const updateProduct = asyncHandler(async (req, res) => {
           return res.status(400).json({ message: "Quantity is required" });
         case !fields.brand:
           return res.status(400).json({ message: "Brand is required" });
+        case !fields.countInStock:
+          return res.status(400).json({ message: "CountInStock is required" });
       }
 
       const name = fields.name[0];
@@ -100,6 +103,7 @@ const updateProduct = asyncHandler(async (req, res) => {
       const category = fields.category[0];
       const quantity = parseInt(fields.quantity[0]);
       const brand = fields.brand[0];
+      const countInStock = parseInt(fields.countInStock[0]);
 
       const product = await Product.findByIdAndUpdate(
         req.params.id,
@@ -111,6 +115,7 @@ const updateProduct = asyncHandler(async (req, res) => {
           category,
           quantity,
           brand,
+          countInStock,
         },
         { new: true }
       );
@@ -246,6 +251,24 @@ const latestProducts = asyncHandler(async (req, res) => {
   }
 });
 
+const filterProducts = asyncHandler(async (req, res) => {
+  try {
+    const { checked, radio } = req.body;
+    let args = {};
+    if (checked.length > 0) {
+      args.category = checked;
+    }
+    if (radio.length > 0) {
+      args.price = { $gte: radio[0], $lte: radio[1] };
+    }
+    const products = await Product.find(args);
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 export {
   addProduct,
   updateProduct,
@@ -256,4 +279,5 @@ export {
   addProductReview,
   topProducts,
   latestProducts,
+  filterProducts,
 };

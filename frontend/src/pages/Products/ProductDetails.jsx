@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import {
     useGetProductDetailsQuery,
@@ -19,12 +19,12 @@ import moment from "moment";
 import HeartIcon from "./HeartIcon";
 import Ratings from "./Ratings";
 import ProductTabs from "./ProductTabs";
-// import { addToCart } from "../../redux/features/cart/cartSlice";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const ProductDetails = () => {
     const { id: productId } = useParams();
-    // const navigate = useNavigate();
-    // const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [qty, setQty] = useState(1);
     const [rating, setRating] = useState(0);
@@ -58,10 +58,10 @@ const ProductDetails = () => {
         }
     };
 
-    // const addToCartHandler = () => {
-    //     dispatch(addToCart({ ...product, qty }));
-    //     navigate("/cart");
-    // };
+    const addToCartHandler = () => {
+        dispatch(addToCart({ ...product, qty }));
+        navigate("/cart");
+    };
 
     return (
         <>
@@ -143,7 +143,7 @@ const ProductDetails = () => {
                                         <select
                                             value={qty}
                                             onChange={(e) => setQty(e.target.value)}
-                                            className="p-2 w-[6rem] rounded-lg text-black"
+                                            className="p-2 w-[6rem] rounded-lg text-white bg-black border-1"
                                         >
                                             {[...Array(product.countInStock).keys()].map((x) => (
                                                 <option key={x + 1} value={x + 1}>
@@ -155,7 +155,7 @@ const ProductDetails = () => {
                                 )}
                             </div>
 
-                            {/* <div className="btn-container">
+                            <div className="btn-container">
                                 <button
                                     onClick={addToCartHandler}
                                     disabled={product.countInStock === 0}
@@ -163,7 +163,7 @@ const ProductDetails = () => {
                                 >
                                     Add To Cart
                                 </button>
-                            </div> */}
+                            </div>
                         </div>
 
                         <div className="mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">

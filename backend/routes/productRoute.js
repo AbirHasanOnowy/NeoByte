@@ -16,6 +16,7 @@ import {
   addProductReview,
   topProducts,
   latestProducts,
+  filterProducts,
 } from "../controllers/productController.js";
 import { get } from "mongoose";
 
@@ -30,6 +31,7 @@ router.route("/allproducts").get(getAllProducts);
 router.route("/:id/reviews").post(authenticateUser, checkId, addProductReview);
 router.route("/top").get(topProducts);
 router.route("/new").get(latestProducts);
+router.route("/filtered-products").post(filterProducts);
 router
   .route("/:id")
   .get(getProductById)

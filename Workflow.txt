@@ -134,3 +134,17 @@
 14. products->Ratings.jsx to show ratings with stars where ever it is used
 15. products->ProductDetails.jsx for providing product detail upon clicking a product
 16. products->ProductTabs.jsx to Handle reviews and show related products in ProductDetails page
+
+
+//cart 
+1. redux->features->cart->cartSlice.js add api for cart
+2. utils->cartUtils.js manipulate data related to cart
+3. pages->Cart.jsx and import to main.jsx to render it
+4. redux->features->shop->shopSlice.js add api for shop
+5. register shopSlice in store.js
+6. pages->shop.jsx define how to filter and show products
+7. products->ProductCard.jsx define each product in card view
+
+#       B   A   C   K   E   N   D      #
+1. productRoutes.js add route for filtered products
+2. productController.js add product filter method
