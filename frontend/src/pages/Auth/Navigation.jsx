@@ -14,6 +14,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/userApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 import FavoritesCount from "../Products/FavoritesCount";
+import { clearCartItems } from "../../redux/features/cart/cartSlice";
+import { clearFavourites } from "../../redux/features/favorites/favoriteSlice";
 
 const Navigation = () => {
     const { userInfo } = useSelector((state) => state.auth);
@@ -37,6 +39,8 @@ const Navigation = () => {
     const logoutHandler = async () => {
         try {
             await logoutApiCall().unwrap();
+            dispatch(clearCartItems());
+            dispatch(clearFavourites());
             dispatch(logout());
             navigate("/login");
         } catch (error) {
@@ -74,7 +78,7 @@ const Navigation = () => {
                             {cartItems.length > 0 && (
                                 <span>
                                     <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
-                                        {cartItems.reduce((a, c) => parseInt(a + c.qty), 0)}
+                                        {cartItems.reduce((a, c) => parseInt(a + c.qty * 1), 0)}
                                     </span>
                                 </span>
                             )}

@@ -11,6 +11,7 @@ cors //not used
 cookie-parser
 concurrently
 bcryptjs
+sslcommerz-lts
 
 //frontend
 react

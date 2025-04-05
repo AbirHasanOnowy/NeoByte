@@ -9,6 +9,8 @@ import userRoute from "./routes/userRoute.js";
 import categoryRoute from "./routes/categoryRoute.js";
 import productRoute from "./routes/productRoute.js";
 import uploadRoute from "./routes/uploadRoute.js";
+import orderRoute from "./routes/orderRoute.js";
+import paymentRoute from "./routes/paymentRoute.js";
 
 //utils
 import connectDB from "./config/db.js";
@@ -29,13 +31,11 @@ app.use("/api/user", userRoute);
 app.use("/api/category", categoryRoute);
 app.use("/api/products", productRoute);
 app.use("/api/upload", uploadRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/config/payment", paymentRoute);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-
-app.get("/", (req, res) => {
-  res.send("Hello from the backend!");
-});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}. Go to http://localhost:${port}`);

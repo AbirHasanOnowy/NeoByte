@@ -97,6 +97,7 @@
 
 
 #       B   A   C   K   E   N   D      #
+
 1. similar as before create product model,controller,route and 
    main route to index file
 2. middleware->checkId.js 
@@ -148,3 +149,31 @@
 #       B   A   C   K   E   N   D      #
 1. productRoutes.js add route for filtered products
 2. productController.js add product filter method
+
+
+
+@#$ - - - - -         O      R      D      E      R          &          P      A      Y      M      E      N      T      S        - - - - -$#@
+
+
+#       B   A   C   K   E   N   D      #
+
+1. orderModel.js, orderRoute.js, orderController.js to manage orders
+2. add order main route to index.js
+3. add sslcommerz crediantials to index.js
+4. Add store id and password to env file and use it in index.js
+
+
+
+#     F   R   O   N   T   E   N   D      #
+
+1. src->redux->api->orderAPiSlice.js add api
+2. add api url to redux->constants.js
+3. pages->orders->Shipping.jsx handle product purchase
+4. render shipping.jsx from main
+5. components->ProgressSteps.jsx to show user how much they progressed to buy
+   that product
+6. pages->orders->PlaceOrder.jsx 
+7. render PlaceOrder.jsx from main
+8. Orders->order.jsx to handle ordersummery and initiate payment gateway
+9. user->UserOrder.jsx to show user their orders
+10. pages->Admin->OrderList to show admin all orders
