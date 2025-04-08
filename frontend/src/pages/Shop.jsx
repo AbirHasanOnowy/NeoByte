@@ -87,7 +87,7 @@ const Shop = () => {
             <div className="container mx-auto">
                 <div className="flex md:flex-row">
                     <div className="bg-[#151515] p-3 mt-2 mb-2">
-                        <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+                        <h2 className="h4 text-center py-2 duration-600 bg-gradient-to-r from-green-400 to-blue-500 rounded-sm mb-2">
                             Filter by Categories
                         </h2>
 
@@ -114,7 +114,7 @@ const Shop = () => {
                             ))}
                         </div>
 
-                        <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+                        <h2 className="h4 text-center py-2 duration-600 bg-gradient-to-r from-green-400 to-blue-500 rounded-sm mb-2">
                             Filter by Brands
                         </h2>
 
@@ -141,7 +141,7 @@ const Shop = () => {
                             ))}
                         </div>
 
-                        <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+                        <h2 className="h4 text-center py-2 transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 rounded-sm mb-2">
                             Filer by Price
                         </h2>
 
@@ -157,7 +157,7 @@ const Shop = () => {
 
                         <div className="p-5 pt-0">
                             <button
-                                className="w-full border my-4"
+                                className="w-full border my-4 transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600"
                                 onClick={() => window.location.reload()}
                             >
                                 Reset

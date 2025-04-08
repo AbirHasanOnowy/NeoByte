@@ -17,7 +17,7 @@ const ProductCard = ({ p }) => {
         <div className="flex justify-between max-w-sm relative bg-[#1A1A1A] rounded shaodw dark:bg-gray-800 dark:border-gray-700 h-[200px] w-[500px]">
             <section className="relative mr-0">
                 <Link to={`/product/${p._id}`}>
-                    <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                    <span className="absolute bottom-3 right-3 bg-cyan-100 text-cyan-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-cyan-900 dark:text-cyan-300">
                         {p?.brand}
                     </span>
                     <img
@@ -34,7 +34,7 @@ const ProductCard = ({ p }) => {
                 <div className="flex justify-between">
                     <h5 className="mb-2 text-xl text-white dark:text-white">{p?.name?.substring(0, 15)}</h5>
 
-                    <p className="  font-semibold text-pink-500 rounded-2xl">
+                    <p className="  font-semibold text-cyan-500 rounded-2xl">
                         {p?.price?.toLocaleString("en-US", {
                             style: "currency",
                             currency: "USD",
@@ -49,7 +49,7 @@ const ProductCard = ({ p }) => {
                 <section className="flex justify-between">
                     <Link
                         to={`/product/${p._id}`}
-                        className="absolute bottom-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                        className="absolute bottom-2 items-center px-3 py-2 text-sm font-medium text-center text-white transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 rounded-md focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
                     >
                         Read More
                         <svg

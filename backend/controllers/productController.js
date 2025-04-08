@@ -3,8 +3,6 @@ import Product from "../models/productModel.js";
 import formidable from "formidable";
 
 const addProduct = asyncHandler(async (req, res) => {
-  console.log(req.body);
-
   try {
     const form = formidable({});
     form.keepExtensions = true;
@@ -155,7 +153,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
 
 const fetchProducts = asyncHandler(async (req, res) => {
   try {
-    const pageSize = 6;
+    const pageSize = 12;
     const keyword = req.query.keyword
       ? {
           name: {
@@ -235,7 +233,7 @@ const addProductReview = asyncHandler(async (req, res) => {
 
 const topProducts = asyncHandler(async (req, res) => {
   try {
-    const products = await Product.find({}).sort({ rating: -1 }).limit(4);
+    const products = await Product.find({}).sort({ rating: -1 }).limit(6);
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
@@ -244,7 +242,7 @@ const topProducts = asyncHandler(async (req, res) => {
 
 const latestProducts = asyncHandler(async (req, res) => {
   try {
-    const products = await Product.find({}).sort({ createdAt: -1 }).limit(5);
+    const products = await Product.find({}).sort({ createdAt: 1 }).limit(5);
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: "Server error" });

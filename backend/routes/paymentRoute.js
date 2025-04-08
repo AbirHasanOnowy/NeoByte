@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import SSLCommerzPayment from "sslcommerz-lts"; // Adjust the import path as necessary
+// import SSLCommerzPayment from "sslcommerz-lts"; // Adjust the import path as necessary
 import Order from "../models/orderModel.js"; // Adjust the import path as necessary
 import asyncHandler from "../middleware/asyncHandler.js";
 import {
@@ -82,14 +82,14 @@ const paymentProcessor = asyncHandler(async (req, res) => {
       ship_postcode: 1000,
       ship_country: "Bangladesh",
     };
-    const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live);
-    sslcz.init(data).then((apiResponse) => {
-      // Redirect the user to payment gateway
-      let GatewayPageURL = apiResponse.GatewayPageURL;
-      // res.redirect(GatewayPageURL);
-      console.log("Redirecting to: ", GatewayPageURL);
-      res.status(200).json({ url: GatewayPageURL });
-    });
+    // const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live);
+    // sslcz.init(data).then((apiResponse) => {
+    //   // Redirect the user to payment gateway
+    //   let GatewayPageURL = apiResponse.GatewayPageURL;
+    //   // res.redirect(GatewayPageURL);
+    //   console.log("Redirecting to: ", GatewayPageURL);
+    //   res.status(200).json({ url: GatewayPageURL });
+    // });
   } catch (error) {
     console.error("Error processing payment:", error);
     res.status(500);

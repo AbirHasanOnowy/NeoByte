@@ -11,7 +11,8 @@ cors //not used
 cookie-parser
 concurrently
 bcryptjs
-sslcommerz-lts
+sslcommerz-lts //doesn't work
+react-apexcharts
 
 //frontend
 react

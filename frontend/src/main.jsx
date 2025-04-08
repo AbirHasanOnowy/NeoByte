@@ -1,7 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import ReactDom from 'react-dom/client'
 import { Route, RouterProvider, createRoutesFromElements } from 'react-router'
 import { createBrowserRouter } from 'react-router-dom'
 import "./index.css"
@@ -10,10 +9,14 @@ import store from './redux/store.js'
 
 //Private Route
 import PrivateRoute from './components/PrivateRoute.jsx'
+import Shipping from './pages/Orders/Shipping.jsx'
+import PlaceOrder from './pages/Orders/PlaceOrder.jsx'
+import Order from './pages/Orders/Order.jsx'
 // Auth
 import Login from './pages/Auth/Login.jsx'
 import Register from './pages/Auth/Register.jsx'
 //Admin
+import AdminDashboard from './pages/Admin/AdminDashboard.jsx'
 import AdminRoute from './pages/Admin/AdminRoute.jsx'
 import UserList from './pages/Admin/UserList.jsx'
 import CategoryList from './pages/Admin/CategoryList.jsx'
@@ -27,9 +30,6 @@ import Cart from './pages/Cart.jsx'
 import Shop from './pages/Shop.jsx'
 import Favorites from './pages/Products/Favorites.jsx'
 import ProductDetails from './pages/Products/ProductDetails.jsx'
-import Shipping from './pages/Orders/Shipping.jsx'
-import PlaceOrder from './pages/Orders/PlaceOrder.jsx'
-import Order from './pages/Orders/Order.jsx'
 import UserOrder from './pages/User/UserOrder.jsx'
 import OrderList from './pages/Admin/OrderList.jsx'
 
@@ -53,6 +53,7 @@ const router = createBrowserRouter(
       </Route>
       {/* Admin Routes */}
       <Route path="/admin" element={<AdminRoute />}>
+        <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="userlist" element={<UserList />} />
         <Route path="categorylist" element={<CategoryList />} />
         <Route path="addproduct" element={<AddProduct />} />

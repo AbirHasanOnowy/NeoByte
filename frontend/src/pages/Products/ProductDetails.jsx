@@ -159,7 +159,7 @@ const ProductDetails = () => {
                                 <button
                                     onClick={addToCartHandler}
                                     disabled={product.countInStock === 0}
-                                    className="bg-pink-600 text-white py-2 px-4 rounded-lg mt-4 md:mt-0"
+                                    className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 text-white py-2 px-4 rounded-sm mt-4 md:mt-0"
                                 >
                                     Add To Cart
                                 </button>

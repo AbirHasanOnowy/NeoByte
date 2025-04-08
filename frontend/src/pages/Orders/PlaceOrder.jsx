@@ -34,7 +34,6 @@ const PlaceOrder = () => {
                 taxPrice: cart.taxPrice,
                 totalPrice: cart.totalPrice,
             }).unwrap();
-            console.log(res._id);
             dispatch(clearCartItems());
             navigate(`/order/${res._id}`);
         } catch (error) {
@@ -129,7 +128,7 @@ const PlaceOrder = () => {
 
                     <button
                         type="button"
-                        className="bg-pink-500 text-white py-2 px-4 rounded-full text-lg w-full mt-4"
+                        className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 text-white py-2 px-4 rounded-full text-lg w-full mt-4"
                         disabled={cart.cartItems === 0}
                         onClick={placeOrderHandler}
                     >

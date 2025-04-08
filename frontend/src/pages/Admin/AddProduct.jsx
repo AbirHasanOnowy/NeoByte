@@ -55,7 +55,6 @@ const AddProduct = () => {
                 case !stock:
                     return toast.error("Stock is required");
                 case !category:
-                    console.log(category);
                     return toast.error("Category is required");
             }
 

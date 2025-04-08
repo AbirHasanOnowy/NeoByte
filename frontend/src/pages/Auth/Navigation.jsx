@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/userApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 import FavoritesCount from "../Products/FavoritesCount";
+import { toast } from "react-toastify";
 import { clearCartItems } from "../../redux/features/cart/cartSlice";
 import { clearFavourites } from "../../redux/features/favorites/favoriteSlice";
 
@@ -44,7 +45,7 @@ const Navigation = () => {
             dispatch(logout());
             navigate("/login");
         } catch (error) {
-            console.log(error);
+            toast.error(error?.data?.message || error.error);
         }
     }
 
@@ -77,7 +78,7 @@ const Navigation = () => {
                         <div className="absolute top-7 left-4">
                             {cartItems.length > 0 && (
                                 <span>
-                                    <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                                    <span className="px-1 py-0 text-sm text-white bg-cyan-700 rounded-full">
                                         {cartItems.reduce((a, c) => parseInt(a + c.qty * 1), 0)}
                                     </span>
                                 </span>

@@ -177,3 +177,11 @@
 8. Orders->order.jsx to handle ordersummery and initiate payment gateway
 9. user->UserOrder.jsx to show user their orders
 10. pages->Admin->OrderList to show admin all orders
+11. Admin->AdminDashboard to show stats to admin
+
+
+
+
+
+/////////////   to do //////////////
+2. change payment method

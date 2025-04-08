@@ -76,7 +76,6 @@ const ProductUpdate = () => {
             formData.append("name", name);
             formData.append("description", description);
             formData.append("price", price);
-            console.log(category);
             formData.append("category", category);
             formData.append("quantity", quantity);
             formData.append("brand", brand);
@@ -112,7 +111,6 @@ const ProductUpdate = () => {
                 navigate("/admin/allproductslist");
             }
         } catch (err) {
-            console.log(err);
             toast.error(err.message || "Product update failed. Try again.");
         }
     };
@@ -128,7 +126,6 @@ const ProductUpdate = () => {
             toast.success(`"${data.name}" is deleted`);
             navigate("/admin/allproductslist");
         } catch (err) {
-            console.log(err);
             toast.error(err.message || "Delete failed. Try again.");
         }
     };

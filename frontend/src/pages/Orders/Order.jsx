@@ -16,7 +16,6 @@ import moment from "moment";
 
 const Order = () => {
     const { id: orderId } = useParams();
-    console.log(orderId);
 
     const {
         data: order,
@@ -25,7 +24,6 @@ const Order = () => {
         error,
     } = useGetOrderDetailsQuery(orderId);
 
-    console.log(order);
 
     // const { data: payment } = useGetPaymentQuery(orderId);
 
@@ -56,7 +54,6 @@ const Order = () => {
 
     const handlePayment = async (e) => {
         e.preventDefault();
-        console.log(orderId);
         // return payOrder({ orderId })
         //     .unwrap()
         try {
@@ -191,26 +188,26 @@ const Order = () => {
                 <div className="mt-5 border-gray-300 pb-4 mb-4">
                     <h2 className="text-xl font-bold mb-2">Shipping</h2>
                     <p className="mb-4 mt-4">
-                        <strong className="text-pink-500">Order:</strong> {order._id}
+                        <strong className="text-cyan-500">Order:</strong> {order._id}
                     </p>
 
                     <p className="mb-4">
-                        <strong className="text-pink-500">Name:</strong>{" "}
+                        <strong className="text-cyan-500">Name:</strong>{" "}
                         {order.user.username}
                     </p>
 
                     <p className="mb-4">
-                        <strong className="text-pink-500">Email:</strong> {order.user.email}
+                        <strong className="text-cyan-500">Email:</strong> {order.user.email}
                     </p>
 
                     <p className="mb-4">
-                        <strong className="text-pink-500">Address:</strong>{" "}
+                        <strong className="text-cyan-500">Address:</strong>{" "}
                         {order.shippingAddress.address}, {order.shippingAddress.city}{" "}
                         {order.shippingAddress.postalCode}, {order.shippingAddress.country}
                     </p>
 
                     <p className="mb-4">
-                        <strong className="text-pink-500">Method:</strong>{" "}
+                        <strong className="text-cyan-500">Method:</strong>{" "}
                         {order.paymentMethod}
                     </p>
 
@@ -244,7 +241,7 @@ const Order = () => {
                         {loadingPay && <Loader />}
                         <button
                             type="button"
-                            className="bg-pink-500 text-white w-full py-2"
+                            className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 rounded-sm text-white w-full py-2"
                             onClick={handlePayment}
                         >
                             Pay Now
@@ -257,7 +254,7 @@ const Order = () => {
                     <div>
                         <button
                             type="button"
-                            className="bg-pink-500 text-white w-full py-2"
+                            className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 rounded-sm text-white w-full py-2"
                             onClick={deliverHandler}
                         >
                             Mark As Delivered
