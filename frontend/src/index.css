@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-gradient-bg: gradient-bg 5s linear infinite;
+  
+
+  @keyframes gradient-bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    } 
+    
+  }
+
+}
+
 /* 
 body {
     background: #0f0f10;
@@ -16,8 +35,8 @@ body {
     height: 100vh;
     margin: 0;
   }
-  
-  /* @keyframes gradientAnimation {
+/*   
+  @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -28,4 +47,12 @@ input, textarea {
     background: transparent;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
+  }
+
+  .animatedbg {
+    background: linear-gradient(-45deg, #ff6600, #ff0066, #8e00ff, #005bff, #00ff99, #00f2ff);
+    /* background: linear-gradient(135deg, #cc2bff, #00cfff, #1e4fff, #220066); */
+    background-clip: text;
+    background-size: 400% 400%;
+    /* animation: gradientMove 15s ease infinite; */
   }
