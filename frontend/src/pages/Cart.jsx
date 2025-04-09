@@ -24,18 +24,18 @@ const Cart = () => {
 
     return (
         <>
-            <div className="container flex justify-around items-start flex-wrap mx-auto mt-8">
+            <div className="container flex justify-around items-start flex-wrap mx-auto mt-8 text-white">
                 {cartItems.length === 0 ? (
                     <div div className="text-4xl font-semibold text-center">
                         Your cart is empty <Link to="/shop" className="bg-amber-200 p-2 rounded italic transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600">Go To Shop</Link>
                     </div>
                 ) : (
                     <>
-                        <div className="flex flex-col w-[60%]">
+                        <div className="flex flex-col w-[60%] ">
                             <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
 
                             {cartItems.map((item) => (
-                                <div key={item._id} className="flex items-center mb-[1rem] pb-2 bg-[#1A1A1A] rounded">
+                                <div key={item._id} className="flex items-center mb-[1rem] p-2 backdrop-blur-md bg-white/10 border border-white/20 rounded">
                                     <div className="w-[5rem] h-[5rem]">
                                         <img
                                             src={item.image}
@@ -57,14 +57,14 @@ const Cart = () => {
 
                                     <div className="h-10 w-24">
                                         <select
-                                            className="w-full p-1 border rounded bg-transparent text-white dark:bg-[#1A1A1A]"
+                                            className="w-full p-1 border border-white/10 rounded bg-transparent text-white text-center "
                                             value={item.qty}
                                             onChange={(e) =>
                                                 addToCartHandler(item, Number(e.target.value))
                                             }
                                         >
                                             {[...Array(item.countInStock).keys()].map((x) => (
-                                                <option key={x + 1} value={x + 1}>
+                                                <option key={x + 1} value={x + 1} className="bg-purple-950">
                                                     {x + 1}
                                                 </option>
                                             ))}
@@ -73,7 +73,7 @@ const Cart = () => {
 
                                     <div>
                                         <button
-                                            className="text-red-500 mr-[2rem]"
+                                            className="text-red-500 mr-[2rem] mb-1"
                                             onClick={() => removeFromCartHandler(item._id)}
                                         >
                                             <FaTrash className="ml-[1rem] mt-[.5rem]" />

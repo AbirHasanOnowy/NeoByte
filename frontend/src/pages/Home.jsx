@@ -21,13 +21,13 @@ const Home = () => {
             ) : (
                 <>
                     <div className="flex justify-between items-center">
-                        <h1 className="ml-[20rem] mt-[10rem] text-[3rem]">
+                        <h1 className="ml-[12rem] mt-[10rem] text-[3rem] text-white font-bold">
                             Special Products
                         </h1>
 
                         <Link
                             to="/shop"
-                            className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 font-bold rounded-full py-2 px-10 mr-[18rem] mt-[10rem]"
+                            className="text-white transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 font-bold rounded-full py-2 px-10 mr-[10rem] mt-[10rem]"
                         >
                             Shop
                         </Link>
@@ -42,6 +42,7 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
+
                 </>
             )}
         </>

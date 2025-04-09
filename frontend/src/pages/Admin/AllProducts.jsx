@@ -17,25 +17,27 @@ const AllProducts = () => {
 
     return (
         <>
-            <div className="container mx-[9rem]">
+            <div className="container mx-[6rem] text-white">
                 <div className="flex flex-col  md:flex-row">
                     <div className="p-3">
                         <div className="ml-[2rem] text-xl font-bold h-12">
                             All Products ({products.length})
                         </div>
-                        <div className="flex flex-wrap justify-around items-center">
+                        <div className="flex flex-wrap justify-between items-center">
                             {products.map((product) => (
                                 <div
                                     key={product._id}
                                     className="block mb-4 overflow-hidden"
                                 >
-                                    <div className="flex">
-                                        <img
-                                            src={product.image}
-                                            alt={product.name}
-                                            className="w-[10rem] object-cover"
-                                        />
-                                        <div className="p-4 flex flex-col justify-around">
+                                    <div className="flex p-4 pb-4 backdrop-blur-md bg-white/10 border border-white/10 rounded-lg w-[45rem] h-[12rem]">
+                                        <div className="w-[30rem] h-[10rem] flex items-center">
+                                            <img
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="w-[30rem] h-[10rem] object-cover rounded-lg"
+                                            />
+                                        </div>
+                                        <div className="p-4 flex flex-col justify-around w-full">
                                             <div className="flex justify-between">
                                                 <h5 className="text-xl font-semibold mb-2">
                                                     {product?.name}
@@ -47,7 +49,7 @@ const AllProducts = () => {
                                             </div>
 
                                             <p className="text-gray-400 xl:w-[30rem] lg:w-[30rem] md:w-[20rem] sm:w-[10rem] text-sm mb-4">
-                                                {product?.description?.substring(0, 160)}...
+                                                {product?.description?.substring(0, 80)}...
                                             </p>
 
                                             <div className="flex justify-between">

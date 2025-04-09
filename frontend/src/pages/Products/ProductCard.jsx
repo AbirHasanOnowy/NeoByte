@@ -14,7 +14,7 @@ const ProductCard = ({ p }) => {
     };
 
     return (
-        <div className="flex justify-between max-w-sm relative bg-[#1A1A1A] rounded shaodw dark:bg-gray-800 dark:border-gray-700 h-[200px] w-[500px]">
+        <div className="flex text-white justify-between max-w-sm relative border border-white/20 rounded shaodw bg-gray-800/50 h-[200px] w-[500px]">
             <section className="relative mr-0">
                 <Link to={`/product/${p._id}`}>
                     <span className="absolute bottom-3 right-3 bg-cyan-100 text-cyan-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-cyan-900 dark:text-cyan-300">

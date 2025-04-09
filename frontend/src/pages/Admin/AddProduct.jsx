@@ -87,7 +87,7 @@ const AddProduct = () => {
     };
 
     return (
-        <div className="container xl:mx-[9rem] sm:mx-[0]">
+        <div className="container xl:mx-[9rem] sm:mx-[0] text-white">
             <div className="flex flex-col md:flex-row">
                 <AdminMenu />
                 <div className="md:w-3/4 p-3">
@@ -104,7 +104,7 @@ const AddProduct = () => {
                     )}
 
                     <div className="mb-3">
-                        <label className="border text-white px-4 block w-full text-center rounded-lg cursor-pointer font-bold py-11">
+                        <label className="border  px-4 block w-full text-center rounded-lg cursor-pointer font-bold py-11">
                             {image ? image.name : "Upload Image"}
 
                             <input
@@ -119,10 +119,10 @@ const AddProduct = () => {
                     <div className="p-3">
                         <div className="flex flex-wrap justify-between">
                             <div className="one">
-                                <label htmlFor="name">Name</label> <br />
+                                <label htmlFor="name" className="pb-2">Name</label> <br />
                                 <input
                                     type="text"
-                                    className="p-4 mb-3 w-[33rem] border rounded-lg bg-[#101011] text-white"
+                                    className=" mt-2 p-4 mb-3 w-[33rem] border rounded-lg  "
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                 />
@@ -131,7 +131,7 @@ const AddProduct = () => {
                                 <label htmlFor="price block">Price</label> <br />
                                 <input
                                     type="number"
-                                    className="p-4 mb-3 w-[33rem] border rounded-lg bg-[#101011] text-white"
+                                    className=" mt-2 p-4 mb-3 w-[33rem] border rounded-lg  "
                                     value={price}
                                     onChange={(e) => setPrice(e.target.value)}
                                 />
@@ -142,7 +142,7 @@ const AddProduct = () => {
                                 <label htmlFor="quantity block">Quantity</label> <br />
                                 <input
                                     type="number"
-                                    className="p-4 mb-3 w-[33rem] border rounded-lg bg-[#101011] text-white"
+                                    className="mt-2 p-4 mb-3 w-[33rem] border rounded-lg  "
                                     value={quantity}
                                     onChange={(e) => setQuantity(e.target.value)}
                                 />
@@ -151,7 +151,7 @@ const AddProduct = () => {
                                 <label htmlFor="name block">Brand</label> <br />
                                 <input
                                     type="text"
-                                    className="p-4 mb-3 w-[33rem] border rounded-lg bg-[#101011] text-white"
+                                    className="mt-2 p-4 mb-3 w-[33rem] border rounded-lg  "
                                     value={brand}
                                     onChange={(e) => setBrand(e.target.value)}
                                 />
@@ -163,7 +163,7 @@ const AddProduct = () => {
                         </label>
                         <textarea
                             type="text"
-                            className="p-2 mb-3 bg-[#101011] border rounded-lg w-[69rem] text-white"
+                            className="mt-2 p-2 mb-3  border rounded-lg w-[69rem] "
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         ></textarea>
@@ -173,7 +173,7 @@ const AddProduct = () => {
                                 <label htmlFor="name block">Count In Stock</label> <br />
                                 <input
                                     type="number"
-                                    className="p-4 mb-3 w-[33rem] border rounded-lg bg-[#101011] text-white"
+                                    className="mt-2 p-4 mb-3 w-[33rem] border rounded-lg  "
                                     value={stock}
                                     onChange={(e) => setStock(e.target.value)}
                                 />
@@ -183,12 +183,12 @@ const AddProduct = () => {
                                 <label htmlFor="">Category</label> <br />
                                 <select
                                     // placeholder="Choose Category"
-                                    className="p-4 mb-3 w-[33rem] border rounded-lg bg-[#101011] text-white"
+                                    className="mt-2 p-4 mb-3 w-[33rem] border rounded-lg  "
                                     onChange={(e) => setCategory(e.target.value)}
                                 >
-                                    <option value="" className="text-center">Choose Category</option>
+                                    <option value="" className="text-center bg-purple-950">Choose Category</option>
                                     {categories?.map((c) => (
-                                        <option className="text-center" key={c._id} value={c._id}>
+                                        <option className="text-center bg-purple-950" key={c._id} value={c._id}>
                                             {c.name}
                                         </option>
                                     ))}
@@ -198,7 +198,7 @@ const AddProduct = () => {
 
                         <button
                             onClick={handleSubmit}
-                            className="py-4 px-10 w-[69rem] mt-5 rounded-lg text-lg transition-colors duration-600 bg-gradient-to-tr from-cyan-500 text-white  hover:bg-gradient-to-tr  hover:from-cyan-400 hover:to-cyan-900"
+                            className="py-4 px-10 w-[69rem] mt-5 rounded-lg text-lg transition-colors duration-600 bg-gradient-to-tr from-cyan-500   hover:bg-gradient-to-tr  hover:from-cyan-400 hover:to-cyan-900"
                         >
                             Submit
                         </button>

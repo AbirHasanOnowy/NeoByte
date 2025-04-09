@@ -7,6 +7,7 @@ import {
     AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
@@ -53,7 +54,7 @@ const Navigation = () => {
         <div
             style={{ zIndex: 9999 }}
             className={`${showSidebar ? "hidden" : "flex"
-                } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-5 text-white bg-[#000] w-[5%] hover:w-[15%] h-[100vh]  fixed `}
+                } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-5 text-white backdrop-blur-lg  shadow-2xl bg-gradient-to-tl from-[#0c0c3f]/30  via-[#3a0d3c]/30 to-[#c4184e]/30 w-[5%] hover:w-[15%] h-[100vh]  fixed `}
             id="navigation-container"
         >
             <div className="flex flex-col justify-center space-y-4">
@@ -65,7 +66,7 @@ const Navigation = () => {
                 </Link>
 
                 <Link to="/shop" className="flex relative">
-                    <div className="flex items-center transition-transform transform hover:translate-x-2">
+                    <div className="flex items-center transition-transform transform hover:translate-x-2 ">
                         <AiOutlineShopping className="mt-[3rem] mr-3" size={26} />
                         <span className="hidden nav-item-name mt-[3rem]">Shop</span>{" "}
                     </div>
@@ -102,13 +103,19 @@ const Navigation = () => {
             <div className="relative">
                 <button
                     onClick={toggleDropdown}
-                    className="flex item-center text-grey-8000 focus: outline-none"
+                    className="flex item-center text-grey-800 focus: outline-none"
                 >
-                    {userInfo ? (<span className="text-white">{userInfo.username}</span>) : (<></>)}
-                    {userInfo && (
+                    {userInfo ? (
+                        <div className="flex items-center py-2 transition-transform transform active:backdrop-blur-md active:bg-white/10 active:shadow-lg hover:translate-x-2 rounded-lg">
+                            <CgProfile className=" mr-3" size={26} />
+                            <span className="hidden nav-item-name mr">{userInfo.username}</span>{" "}
+
+                            {/* <span className="text-white">{userInfo.username}</span> */}
+                        </div>) : (<></>)}
+                    {/* {userInfo && (
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className={`h-4 w-4 ml-1 mt-2`}
+                            className={`h-4 w-4 ml-3 mt-14`}
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="white"
@@ -120,12 +127,12 @@ const Navigation = () => {
                                 d={dropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
                             />
                         </svg>
-                    )}
+                    )} */}
                 </button>
 
                 {dropdownOpen && userInfo && (
                     <ul
-                        className={`absolute p-2 right-0 mt-2 mr-14 space-y-2 bg-[#151515] ${!userInfo.isAdmin ? "-top-30" : "-top-90"
+                        className={`absolute p-2 right-0 mt-2 mr-14 space-y-2 bg-transparent border border-white/20 ${!userInfo.isAdmin ? "-top-30" : "-top-90"
                             } `}
                     >
                         {userInfo.isAdmin && (
@@ -133,7 +140,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/dashboard"
-                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
+                                        className="block px-4 py-2 hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 "
                                     >
                                         Dashboard
                                     </Link>
@@ -141,7 +148,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/addproduct"
-                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
+                                        className="block px-4 py-2 hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 "
                                     >
                                         Products
                                     </Link>
@@ -149,7 +156,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/categorylist"
-                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
+                                        className="block px-4 py-2 hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 "
                                     >
                                         Category
                                     </Link>
@@ -157,7 +164,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/orderlist"
-                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
+                                        className="block px-4 py-2 hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 "
                                     >
                                         Orders
                                     </Link>
@@ -165,7 +172,7 @@ const Navigation = () => {
                                 <li>
                                     <Link
                                         to="/admin/userlist"
-                                        className="block px-4 py-2 hover:bg-[#2E2D2D] "
+                                        className="block px-4 py-2 hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 "
                                     >
                                         Users
                                     </Link>
@@ -174,14 +181,14 @@ const Navigation = () => {
                         )}
 
                         <li>
-                            <Link to="/profile" className="block px-4 py-2 hover:bg-[#2E2D2D] ">
+                            <Link to="/profile" className="block px-4 py-2 hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 ">
                                 Profile
                             </Link>
                         </li>
                         <li>
                             <button
                                 onClick={logoutHandler}
-                                className="block w-full px-4 py-2 text-left hover:bg-[#2E2D2D] "
+                                className="block w-full px-4 py-2 text-left hover:backdrop-blur-md hover:bg-white/10 hover:border hover:border-white/20 "
                             >
                                 Logout
                             </button>

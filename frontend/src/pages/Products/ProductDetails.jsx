@@ -53,6 +53,8 @@ const ProductDetails = () => {
             }).unwrap();
             refetch();
             toast.success("Review created successfully");
+            setComment("");
+            setRating(0);
         } catch (error) {
             toast.error(error?.data?.message || error.message);
         }
@@ -82,7 +84,7 @@ const ProductDetails = () => {
                 </Message>
             ) : (
                 <>
-                    <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem]">
+                    <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem] text-white">
                         <div>
                             <img
                                 src={product.image}
@@ -143,10 +145,10 @@ const ProductDetails = () => {
                                         <select
                                             value={qty}
                                             onChange={(e) => setQty(e.target.value)}
-                                            className="p-2 w-[6rem] rounded-lg text-white bg-black border-1"
+                                            className="p-2 w-[6rem] rounded-lg text-white bg-transparent border-1"
                                         >
                                             {[...Array(product.countInStock).keys()].map((x) => (
-                                                <option key={x + 1} value={x + 1}>
+                                                <option key={x + 1} value={x + 1} className="bg-purple-950">
                                                     {x + 1}
                                                 </option>
                                             ))}

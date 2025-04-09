@@ -95,7 +95,7 @@ const AdminDashboard = () => {
         <>
             <AdminMenu />
 
-            <section className="xl:ml-[4rem] md:ml-[0rem]">
+            <section className="xl:ml-[4rem] md:ml-[0rem] text-white">
                 <div className="w-[80%] flex justify-around flex-wrap">
                     <div className="rounded-lg bg-transparent p-5 w-[20rem] mt-5 flex flex-col items-center">
                         <div className="w-30 flex justify-center rounded-full bg-gradient-to-r from-green-400 to-blue-500  p-3">

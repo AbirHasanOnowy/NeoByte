@@ -49,7 +49,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="pl-[10rem] flex flex-wrap">
+      <section className="pl-[10rem] flex flex-wrap text-white">
         <div className="mr-[4rem] mt-[5rem]">
           <h1 className="text-2xl font-semibold mb-4">Sign In</h1>
 
@@ -88,12 +88,12 @@ const Login = () => {
               {isPasswordVisible ? (
                 <FaRegEye
                   onClick={() => setIsPasswordVisible(false)}
-                  className="relative left-[92%] -top-8 cursor-pointer text-black w-6 h-6 z-10"
+                  className="relative left-[92%] -top-8 cursor-pointer text-white w-6 h-6 z-10"
                 ></FaRegEye>
               ) : (
                 <FaRegEyeSlash
                   onClick={() => setIsPasswordVisible(true)}
-                  className="relative left-[92%] -top-8 cursor-pointer text-black w-6 h-6 z-10"
+                  className="relative left-[92%] -top-8 cursor-pointer text-white w-6 h-6 z-10"
                 ></FaRegEyeSlash>
               )}
             </div>

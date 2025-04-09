@@ -136,21 +136,21 @@ const Order = () => {
     ) : error ? (
         <Messsage variant="danger">{error.data.message}</Messsage>
     ) : (
-        <div className="container flex flex-col ml-[10rem] md:flex-row">
+        <div className="container flex flex-col ml-[10rem] md:flex-row text-white">
             <div className="md:w-2/3 pr-4">
-                <div className="border gray-300 mt-5 pb-4 mb-5">
+                <div className=" mt-5 pb-4 mb-5">
                     {order.orderItems.length === 0 ? (
                         <Messsage>Order is empty</Messsage>
                     ) : (
                         <div className="overflow-x-auto">
-                            <table className="w-[100%]">
-                                <thead className="border-b-2">
+                            <table className="w-[100%] bg-white/5 border border-white/20 rounded-lg">
+                                <thead className="bg-white/10">
                                     <tr>
-                                        <th className="p-2">Image</th>
-                                        <th className="p-2">Product</th>
-                                        <th className="p-2 text-center">Quantity</th>
-                                        <th className="p-2">Unit Price</th>
-                                        <th className="p-2">Total</th>
+                                        <th className="p-2 border border-white/20">Image</th>
+                                        <th className="p-2 border border-white/20">Product</th>
+                                        <th className="p-2 border border-white/20 text-center">Quantity</th>
+                                        <th className="p-2 border border-white/20">Unit Price</th>
+                                        <th className="p-2 border border-white/20">Total</th>
                                     </tr>
                                 </thead>
 
@@ -158,7 +158,7 @@ const Order = () => {
 
                                     {order.orderItems.map((item, index) => (
                                         <tr key={index}>
-                                            <td className="p-5 content-center">
+                                            <td className="border border-white/20 p-5 content-center">
                                                 <img
                                                     src={item.image}
                                                     alt={item.name}
@@ -166,13 +166,13 @@ const Order = () => {
                                                 />
                                             </td>
 
-                                            <td className="p-2">
+                                            <td className="border border-white/20 p-2">
                                                 <Link to={`/product/${item.product}`}>{item.name}</Link>
                                             </td>
 
-                                            <td className="p-2 text-center">{item.qty}</td>
-                                            <td className="p-2 text-center">{item.price}</td>
-                                            <td className="p-2 text-center">
+                                            <td className="border border-white/20 p-2 text-center">{item.qty}</td>
+                                            <td className="border border-white/20 p-2 text-center">{item.price}</td>
+                                            <td className="border border-white/20 p-2 text-center">
                                                 $ {(item.qty * item.price).toFixed(2)}
                                             </td>
                                         </tr>
@@ -184,7 +184,7 @@ const Order = () => {
                 </div>
             </div>
 
-            <div className="md:w-1/3">
+            <div className="md:w-1/3 bg-white/5 rounded-lg p-4 shadow-md border border-white/20">
                 <div className="mt-5 border-gray-300 pb-4 mb-4">
                     <h2 className="text-xl font-bold mb-2">Shipping</h2>
                     <p className="mb-4 mt-4">

@@ -27,7 +27,7 @@ const ProductCarousel = () => {
     };
 
     return (
-        <div className="mb-4 lg:block xl:block md:block">
+        <div className="mb-4 lg:block xl:block md:block rounded-b-md text-white backdrop-blur-md bg-white/10">
             {isLoading ? null : error ? (
                 <Message variant="danger">
                     {error?.data?.message || error.error}
@@ -58,7 +58,7 @@ const ProductCarousel = () => {
                                     className="w-full rounded-lg object-cover h-[30rem]"
                                 />
 
-                                <div className="mt-4 flex justify-between">
+                                <div className="mt-4 flex justify-between  px-10">
                                     <div className="one">
                                         <h2>{name}</h2>
                                         <p> $ {price}</p> <br /> <br />

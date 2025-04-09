@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
-
+/* 
 body {
     background: #0f0f10;
+    background: linear-gradient(to right, #77dcf5, #77dcf5 50%, #803583 50%, #803583);
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
     color: #fff;
+  } */
+
+  body {
+    background: linear-gradient(135deg,  #0c0c3f,  #3a0d3c, #c4184e, #ff4e1d);
+    background-size: 200% 500%;
+    /* animation: gradientAnimation 15s ease infinite; */
+    height: 100vh;
+    margin: 0;
   }
   
+  /* @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  } */
+  
+  
 input, textarea {
-    background: #1a1a1b;
+    background: transparent;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
   }

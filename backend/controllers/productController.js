@@ -143,7 +143,6 @@ const getAllProducts = asyncHandler(async (req, res) => {
   try {
     const products = await Product.find({})
       .populate("category")
-      .limit(12)
       .sort({ createdAt: -1 });
     res.status(200).json(products);
   } catch (error) {
@@ -163,7 +162,9 @@ const fetchProducts = asyncHandler(async (req, res) => {
         }
       : {};
     const count = await Product.countDocuments({ ...keyword });
-    const products = await Product.find({ ...keyword }).limit(pageSize);
+    const products = await Product.find({ ...keyword })
+      .sort({ numReviews: -1 })
+      .limit(pageSize);
 
     res.json({
       products,

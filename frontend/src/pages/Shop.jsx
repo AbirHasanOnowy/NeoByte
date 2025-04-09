@@ -84,9 +84,9 @@ const Shop = () => {
 
     return (
         <>
-            <div className="container mx-auto">
-                <div className="flex md:flex-row">
-                    <div className="bg-[#151515] p-3 mt-2 mb-2">
+            <div className="container mx-auto text-white">
+                <div className="flex md:flex-row ">
+                    <div className="bg-white/5 shadow p-3 mt-2 mb-2 rounded-lg ">
                         <h2 className="h4 text-center py-2 duration-600 bg-gradient-to-r from-green-400 to-blue-500 rounded-sm mb-2">
                             Filter by Categories
                         </h2>
@@ -166,7 +166,7 @@ const Shop = () => {
                     </div>
 
                     <div className="p-3">
-                        <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
+                        <h1 className="text-center mb-2 text-3xl">{products?.length} Products</h1>
                         <div className="flex flex-wrap">
                             {products.length === 0 ? (
                                 <Loader />

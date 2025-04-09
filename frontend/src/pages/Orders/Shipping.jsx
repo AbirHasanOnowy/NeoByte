@@ -11,7 +11,7 @@ const Shipping = () => {
     const cart = useSelector((state) => state.cart);
     const { shippingAddress } = cart;
 
-    const [paymentMethod, setPaymentMethod] = useState("PayPal");
+    const [paymentMethod, setPaymentMethod] = useState("Direct");
     const [address, setAddress] = useState(shippingAddress.address || "");
     const [city, setCity] = useState(shippingAddress.city || "");
     const [postalCode, setPostalCode] = useState(
@@ -38,13 +38,13 @@ const Shipping = () => {
     }, [navigate, shippingAddress]);
 
     return (
-        <div className="container mx-auto mt-10">
+        <div className="container mx-auto mt-10 text-white">
             <ProgressSteps step1 step2 />
             <div className="mt-[10rem] flex justify-around items-center flex-wrap">
                 <form onSubmit={submitHandler} className="w-[40rem]">
                     <h1 className="text-2xl font-semibold mb-4">Shipping</h1>
                     <div className="mb-4">
-                        <label className="block text-white mb-2">Address</label>
+                        <label className="block  mb-2">Address</label>
                         <input
                             type="text"
                             className="w-full p-2 border rounded"
@@ -55,7 +55,7 @@ const Shipping = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-white mb-2">City</label>
+                        <label className="block  mb-2">City</label>
                         <input
                             type="text"
                             className="w-full p-2 border rounded"
@@ -66,7 +66,7 @@ const Shipping = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-white mb-2">Postal Code</label>
+                        <label className="block  mb-2">Postal Code</label>
                         <input
                             type="text"
                             className="w-full p-2 border rounded"
@@ -77,7 +77,7 @@ const Shipping = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-white mb-2">Country</label>
+                        <label className="block  mb-2">Country</label>
                         <input
                             type="text"
                             className="w-full p-2 border rounded"
@@ -96,17 +96,17 @@ const Shipping = () => {
                                     className="form-radio text-pink-500"
                                     name="paymentMethod"
                                     value="PayPal"
-                                    checked={paymentMethod === "PayPal"}
+                                    checked={paymentMethod === "Direct"}
                                     onChange={(e) => setPaymentMethod(e.target.value)}
                                 />
 
-                                <span className="ml-2">PayPal or Credit Card</span>
+                                <span className="ml-2 ">Direct</span>
                             </label>
                         </div>
                     </div>
 
                     <button
-                        className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600 text-white py-2 px-4 rounded-full text-lg w-full"
+                        className="transition-colors duration-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-red-500 hover:to-purple-600  py-2 px-4 rounded-full text-lg w-full"
                         type="submit"
                     >
                         Continue

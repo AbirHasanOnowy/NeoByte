@@ -57,7 +57,7 @@ const UserList = () => {
     };
 
     return (
-        <div className="p-4">
+        <div className="p-4 text-white">
             <h1 className="text-2xl font-semibold ml-20 mb-3">All Users</h1>
             {isLoading ? (
                 <Loader />
@@ -68,23 +68,23 @@ const UserList = () => {
             ) : (
                 <div className="flex flex-col md:flex-row">
                     <AdminMenu />
-                    <table className="w-full md:w-4/5 mx-auto">
-                        <thead>
+                    <table className="w-full md:w-4/5 mx-auto backdrop-blur-md bg-white/10 border border-white/20 mt-5">
+                        <thead >
                             <tr>
-                                <th className="px-4 py-2 text-left">ID</th>
-                                <th className="px-4 py-2 text-left">NAME</th>
-                                <th className="px-4 py-2 text-left">EMAIL</th>
-                                <th className="px-4 py-2 text-left">ADMIN</th>
-                                <th className="px-4 py-2 text-left">DELETE</th>
+                                <th className="px-4 py-2 text-left bg-white/10 border border-white/20 ">ID</th>
+                                <th className="px-4 py-2 text-left bg-white/10 border border-white/20 ">NAME</th>
+                                <th className="px-4 py-2 text-left bg-white/10 border border-white/20 ">EMAIL</th>
+                                <th className="px-4 py-2 text-left bg-white/10 border border-white/20 ">ADMIN</th>
+                                <th className="px-4 py-2 text-left bg-white/10 border border-white/20 ">DELETE</th>
                             </tr>
                         </thead>
                         <tbody>
                             {users.map((user) => (
                                 <tr key={user._id}>
-                                    <td className="px-4 py-2">{user._id}</td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2 border border-white/20">{user._id}</td>
+                                    <td className="px-4 py-2  border border-white/20">
                                         {editableUserId === user._id ? (
-                                            <div className="flex items-center">
+                                            <div className="flex  ">
                                                 <input
                                                     type="text"
                                                     value={editableUserName}
@@ -99,7 +99,7 @@ const UserList = () => {
                                                 </button>
                                             </div>
                                         ) : (
-                                            <div className="flex items-center">
+                                            <div className="flex ">
                                                 {user.username}{" "}
                                                 <button
                                                     onClick={() =>
@@ -111,9 +111,9 @@ const UserList = () => {
                                             </div>
                                         )}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2  border border-white/20">
                                         {editableUserId === user._id ? (
-                                            <div className="flex items-center">
+                                            <div className="flex ">
                                                 <input
                                                     type="text"
                                                     value={editableUserEmail}
@@ -128,7 +128,7 @@ const UserList = () => {
                                                 </button>
                                             </div>
                                         ) : (
-                                            <div className="flex items-center">
+                                            <div className="flex ">
                                                 <a href={`mailto:${user.email}`}>{user.email}</a>{" "}
                                                 <button
                                                     onClick={() =>
@@ -140,14 +140,14 @@ const UserList = () => {
                                             </div>
                                         )}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="pl-4 py-2  border border-white/20">
                                         {user.isAdmin ? (
                                             <FaCheck style={{ color: "green" }} />
                                         ) : (
                                             <FaTimes style={{ color: "red" }} />
                                         )}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2  border border-white/20">
                                         {!user.isAdmin && (
                                             <div className="flex">
                                                 <button
