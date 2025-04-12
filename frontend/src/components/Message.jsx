@@ -10,7 +10,7 @@ const Message = ({ variant, children }) => {
         }
     };
 
-    return <div className={`p-4 rounded ${getVariantClass()}backdrop-blur-md bg-white/50 text-bold`}>{children}</div>;
+    return <div className={`p-4 rounded ${getVariantClass()} text-center backdrop-blur-md bg-white/90 text-bold`}>{children}</div>;
 };
 
 export default Message;

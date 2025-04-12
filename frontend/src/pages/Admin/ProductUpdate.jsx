@@ -132,7 +132,7 @@ const ProductUpdate = () => {
 
     return (
         <>
-            <div className="container  xl:mx-[9rem] sm:mx-[0]">
+            <div className="container  xl:mx-[9rem] sm:mx-[0] text-white">
                 <div className="flex flex-col md:flex-row">
                     <AdminMenu />
                     <div className="md:w-3/4 p-3">
@@ -167,7 +167,7 @@ const ProductUpdate = () => {
                                     <label htmlFor="name">Name</label> <br />
                                     <input
                                         type="text"
-                                        className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+                                        className="mt-2 p-4 mb-3 w-[30rem] border rounded-lg  text-white mr-[5rem]"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
@@ -177,7 +177,7 @@ const ProductUpdate = () => {
                                     <label htmlFor="name block">Price</label> <br />
                                     <input
                                         type="number"
-                                        className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
+                                        className="mt-2 p-4 mb-3 w-[30rem] border rounded-lg  text-white "
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
@@ -190,7 +190,7 @@ const ProductUpdate = () => {
                                     <input
                                         type="number"
                                         min="1"
-                                        className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+                                        className="mt-2 p-4 mb-3 w-[30rem] border rounded-lg  text-white mr-[5rem]"
                                         value={quantity}
                                         onChange={(e) => setQuantity(e.target.value)}
                                     />
@@ -199,7 +199,7 @@ const ProductUpdate = () => {
                                     <label htmlFor="name block">Brand</label> <br />
                                     <input
                                         type="text"
-                                        className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
+                                        className="mt-2 p-4 mb-3 w-[30rem] border rounded-lg  text-white "
                                         value={brand}
                                         onChange={(e) => setBrand(e.target.value)}
                                     />
@@ -211,7 +211,7 @@ const ProductUpdate = () => {
                             </label>
                             <textarea
                                 type="text"
-                                className="p-2 mb-3 bg-[#101011]  border rounded-lg w-[95%] text-white"
+                                className="mt-2 p-4 mb-3 border rounded-lg w-[95%] text-white"
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                             />
@@ -221,7 +221,7 @@ const ProductUpdate = () => {
                                     <label htmlFor="name block">Count In Stock</label> <br />
                                     <input
                                         type="number"
-                                        className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
+                                        className="mt-2 p-4 mb-3 w-[30rem] border rounded-lg  text-white "
                                         value={stock}
                                         onChange={(e) => setStock(e.target.value)}
                                     />
@@ -231,12 +231,12 @@ const ProductUpdate = () => {
                                     <label htmlFor="">Category</label> <br />
                                     <select
                                         placeholder="Choose Category"
-                                        className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+                                        className="mt-2 p-4 mb-3 w-[30rem] border rounded-lg  text-white mr-[5rem]"
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
-                                        <option value="">Select Category</option>
+                                        <option value="" className="bg-purple-950">Select Category</option>
                                         {categories?.map((c) => (
-                                            <option key={c._id} value={c._id}>
+                                            <option key={c._id} value={c._id} className="bg-purple-950">
                                                 {c.name}
                                             </option>
                                         ))}
