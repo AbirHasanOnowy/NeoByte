@@ -184,3 +184,4 @@
 
 ## F I N I S H I N G ##
 Made a few changes on theme, updated README.md incase someone wants to try my project.
+Fixed few small bugs

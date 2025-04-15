@@ -127,8 +127,15 @@ const Order = () => {
     // }
 
     const deliverHandler = async () => {
-        await deliverOrder(orderId);
-        refetch();
+        try {
+
+            await deliverOrder(orderId);
+            refetch();
+            toast.success("Order is delivered");
+
+        } catch (error) {
+            toast.error(error?.data?.message || error.message);
+        }
     };
 
     return isLoading ? (

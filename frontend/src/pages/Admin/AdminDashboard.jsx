@@ -38,23 +38,51 @@ const AdminDashboard = () => {
             title: {
                 text: "Sales Trend",
                 align: "left",
+                style: {
+                    fontSize: "24px",
+                    color: "#fff",
+                },
             },
             grid: {
-                borderColor: "#ccc",
+                borderColor: "#e0e0e0",
             },
             markers: {
-                size: 1,
+                size: 2,
+                colors: ["#00E396"],
+                strokeColors: "#fff",
             },
             xaxis: {
                 categories: [],
                 title: {
                     text: "Date",
+                    style: {
+                        color: "#fff",
+                        fontSize: "14px",
+                    },
+                },
+                labels: {
+                    style: {
+                        colors: "#fff",
+                    },
+                },
+                tooltip: {
+                    enabled: true,
                 },
             },
             yaxis: {
                 title: {
                     text: "Sales",
+                    style: {
+                        color: "#fff",
+                        fontSize: "14px",
+                    },
                 },
+                labels: {
+                    style: {
+                        colors: "#fff",
+                    },
+                },
+                tickAmount: 5,
                 min: 0,
             },
             legend: {
@@ -71,7 +99,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         if (salesDetail) {
             const formattedSalesDate = salesDetail.map((item) => ({
-                x: item._id,
+                x: item.date,
                 y: item.totalSales,
             }));
 
@@ -85,7 +113,7 @@ const AdminDashboard = () => {
                 },
 
                 series: [
-                    { name: "Sales", data: formattedSalesDate.map((item) => item.y) },
+                    { name: "Sales", data: formattedSalesDate.map((item) => parseInt(item.y)) },
                 ],
             }));
         }
@@ -124,7 +152,7 @@ const AdminDashboard = () => {
 
                         <p className="mt-5">All Orders</p>
                         <h1 className="text-xl font-bold">
-                            {isLoading ? <Loader /> : orders?.totalOrders}
+                            {isLoading ? <Loader /> : parseInt(orders?.totalOrders * 1)}
                         </h1>
                     </div>
                 </div>
